@@ -9,13 +9,18 @@
 }
 .text-grayishBlue{
   color: hsl(60, 29%, 71%);
+ 
+  background-image: url('bgimg.jpg');
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: .5rem;
 
 }
 .text-softRed{
   color: hsl(51, 100%, 53%);
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
+  -webkit-animation: glow 4s ease-in-out infinite alternate;
+  -moz-animation: glow 4s ease-in-out infinite alternate;
+  animation: glow 3s ease-in-out infinite alternate;
 }
 
 .bg-darkDesaturatedBlue {
