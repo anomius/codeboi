@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+.font-redHatText{
+  font-family: 'Red Hat Text', sans-serif;
+  
+}
+.bg-grayishBlue{
+  background-color: hsl(0, 0%, 0%);
+}
+.text-grayishBlue{
+  color: hsl(60, 29%, 71%);
+
+}
+.text-softRed{
+  color: hsl(51, 100%, 53%);
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.bg-darkDesaturatedBlue {
+  background-color: #1a1b21;
+}
+
+.bg-slightlyDarkerDesBlue {
+  background-color: #1b1c24;
+}
+
+.bg-veryDarkBlue{
+  background-color: hsl(235, 16%, 14%);
+}
+
+.bgmostlyBlackBlue {
+  background-color: hsl(234, 17%, 12%);
+}
+
+.container-shadow{
+    -webkit-box-shadow: 0px 17px 12px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 17px 12px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 17px 12px 1px rgba(0,0,0,0.75);
+}
+
+.bottom-flip-shadow{
+    -webkit-box-shadow: inset 0px -2px 1px 0px rgba(0,0,0,0.42);
+    -moz-box-shadow: inset 0px -2px 1px 0px rgba(0,0,0,0.42);
+    box-shadow: inset 0px -2px 1px 0px rgba(0,0,0,0.42);
+}
+
+.top-flip-shadow{
+    -webkit-box-shadow: inset 0px 2px 1px 0px rgba(0,0,0,0.42);
+    -moz-box-shadow: inset 0px 2px 1px 0px rgba(0,0,0,0.42);
+    box-shadow: inset 0px 2px 1px 0px rgba(0,0,0,0.42);
+}
+
+.flip-card-top {
+    animation: flip-top 350ms ease-in;
+    transform-origin: bottom;
+}
+
+@keyframes flip-top {
+    100% {
+        transform: rotateX(90deg);
+    }
+}
+
+.flip-card-bottom {
+    animation: flip-bottom 350ms ease-in-out 350ms;
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
+
+#myVideo {
+    filter: opacity(100%);
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    left: 0;
+  }
+
+@keyframes flip-bottom {
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #ffdd16, 0 0 50px #514500, 0 0 60px #493e00, 0 0 70px #080600;
+    }
+    to {
+      text-shadow: 0 0 20px hsla(51, 100%, 53%, 0.613),  0 0 50px #ffdb0e70, 0 0 60px #dcbb00ba, 0 0 80px #080600;
+    }
+  }
