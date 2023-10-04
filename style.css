@@ -1,101 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
-
-.font-redHatText{
-  font-family: 'Red Hat Text', sans-serif;
-  
-}
-.bg-grayishBlue{
-  background-color: hsl(0, 0%, 0%);
-}
-.text-grayishBlue{
-  color: hsl(60, 29%, 71%);
- 
-  background-image: url('bgimg.jpg');
-  -webkit-background-clip:text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: .5rem;
-
-}
-.text-softRed{
-  color: hsl(51, 100%, 53%);
-  -webkit-animation: glow 4s ease-in-out infinite alternate;
-  -moz-animation: glow 4s ease-in-out infinite alternate;
-  animation: glow 3s ease-in-out infinite alternate;
-}
-
-.bg-darkDesaturatedBlue {
-  background-color: #1a1b21;
-}
-
-.bg-slightlyDarkerDesBlue {
-  background-color: #1b1c24;
-}
-
-.bg-veryDarkBlue{
-  background-color: hsl(235, 16%, 14%);
-}
-
-.bgmostlyBlackBlue {
-  background-color: hsl(234, 17%, 12%);
-}
-
-.container-shadow{
-    -webkit-box-shadow: 0px 17px 12px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 17px 12px 1px rgba(0,0,0,0.75);
-    box-shadow: 0px 17px 12px 1px rgba(0,0,0,0.75);
-}
-
-.bottom-flip-shadow{
-    -webkit-box-shadow: inset 0px -2px 1px 0px rgba(0,0,0,0.42);
-    -moz-box-shadow: inset 0px -2px 1px 0px rgba(0,0,0,0.42);
-    box-shadow: inset 0px -2px 1px 0px rgba(0,0,0,0.42);
-}
-
-.top-flip-shadow{
-    -webkit-box-shadow: inset 0px 2px 1px 0px rgba(0,0,0,0.42);
-    -moz-box-shadow: inset 0px 2px 1px 0px rgba(0,0,0,0.42);
-    box-shadow: inset 0px 2px 1px 0px rgba(0,0,0,0.42);
-}
-
-.flip-card-top {
-    animation: flip-top 350ms ease-in;
-    transform-origin: bottom;
-}
-
-@keyframes flip-top {
-    100% {
-        transform: rotateX(90deg);
-    }
-}
-
-.flip-card-bottom {
-    animation: flip-bottom 350ms ease-in-out 350ms;
-    transform-origin: top;
-    transform: rotateX(90deg);
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #333;
 }
 
 #myVideo {
-    filter: opacity(100%);
-    object-fit: cover;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    z-index: -10;
-    top: 0;
-    left: 0;
-  }
-
-@keyframes flip-bottom {
-    100% {
-        transform: rotateX(0deg);
-    }
+  filter: opacity(100%);
+  object-fit: cover;
+  width: 100vw;
+  height: 85vh;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0;
+}
+.unmute-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-@-webkit-keyframes glow {
-    from {
-      text-shadow: 0 0 10px #ffdd16, 0 0 50px #514500, 0 0 60px #493e00, 0 0 70px #080600;
-    }
-    to {
-      text-shadow: 0 0 20px hsla(51, 100%, 53%, 0.613),  0 0 50px #ffdb0e70, 0 0 60px #dcbb00ba, 0 0 80px #080600;
-    }
+#counter {
+  width: 100vw;
+  height: 15vh;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  background-color: #000;
+}
+
+
+.digit {
+  width: 5vw; /* Set the width and height according to your number images */
+  height: 12vh;
+  /* width: 50px; /* Set the width and height according to your number images */
+  /* height: 75px; /* Set the width and height according to your number images */
+  background-size: cover;
+  display: inline-block;
+  -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
+  filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
+  animation: move-animation 2s infinite linear,
+    glow-animation 1s infinite alternate;
+}
+
+@keyframes glow-animation {
+  from {
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0, 0.8));
+    filter: drop-shadow(0px 0px 10px rgb(255, 215, 0, 0.8));
   }
+
+  to {
+    -webkit-filter: drop-shadow(0px 0px 20px rgba(255, 215, 0, 1));
+    filter: drop-shadow(0px 0px 20px rgba(255, 215, 0, 1));
+  }
+}
+@keyframes move-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  2% {
+    opacity: 0.01;
+  }
+
+  8% {
+    opacity: 0.9;
+    transform: scale(0.9);
+  }
+  99% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+.image {
+  width: auto; /* Set the width according to your image size */
+  height: 7vh; /* Set the height according to your image size */
+  position: fixed;
+  bottom: -5px;
+  display: inline-block;
+
+  -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
+  filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
+  animation: move-animation 20s infinite linear,
+    glow-animation 1s infinite alternate;
+}
+
+#daysImage {
+  left: 16.5vw; /* Adjust the left position according to your layout */
+}
+
+#hoursImage {
+  left: 32.6vw; /* Adjust the left position according to your layout */
+}
+
+#minImage {
+  left: 48.5%; /* Adjust the left position according to your layout */
+}
+
+#secondsImage {
+  left: 64.5%; /* Adjust the left position according to your layout */
+}
+#revImage{
+  bottom: 5vh;
+  left: 1vw;
+}
+#comImage{
+  bottom: 5vh;
+  left: 80vw;
+}
