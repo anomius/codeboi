@@ -1,41 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <!--    link css-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
     <link rel="stylesheet" href="style.css">
-   
 </head>
 
-<script src="script.js"></script>
 <body id="app" class="d-flex h-100">
-  <script src="https://cdn.tailwindcss.com"></script>
 
-  <body class="relative w-full h-screen m-0 bg-gradient-to-b from-mostlyBlackBlue to-veryDarkBlue
-      font-redHatText">
-    <section class="w-full h-full flex flex-col justify-center items-center">
-      
-      <!--Time-->
-      <button id="readyButton" class="ready-button">Are you ready?</button>
-      <video autoplay muted loop id="myVideo">
+    <video autoplay loop id="myVideo">
         <source src="vid2.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
-      </video>
-
-      
-      <div bg-gradient-to-b from-black100 to-black600 id="counter">
-    
-        <div id="timer">
-          <div class="digit" id="digit1"></div>
-          <div class="digit" id="digit2"></div>
-          <div class="digit" id="space1"></div>
-          <div class="digit" id="digit3"></div>
-          <div class="digit" id="digit4"></div>
-          <div class="digit" id="space2"></div>
-          <div class="digit" id="digit5"></div>
-          <div class="digit" id="digit6"></div>
-          <div class="digit" id="space3"></div>
-          <div class="digit" id="digit7"></div>
-          <div class="digit" id="digit8"></div>
+    </video>
+    <button id="unmuteButton" class="unmute-button">Unmute</button>
+    <div class="container">
+        <div id="counter">
+            <div class="digit" id="digit1"></div>
+            <div class="digit" id="digit2"></div>
+            <div class="digit" id="space1"></div>
+            <div class="digit" id="digit3"></div>
+            <div class="digit" id="digit4"></div>
+            <div class="digit" id="space2"></div>
+            <div class="digit" id="digit5"></div>
+            <div class="digit" id="digit6"></div>
+            <div class="digit" id="space3"></div>
+            <div class="digit" id="digit7"></div>
+            <div class="digit" id="digit8"></div>
         </div>
         <img src="DAY.png" alt="Days" class="image" id="daysImage">
         <img src="HOUR.png" alt="Hours" class="image" id="hoursImage">
@@ -43,53 +35,53 @@
         <img src="SEC.png" alt="Seconds" class="image" id="secondsImage">
         <img src="REVOLUTION.png" alt="REVOLUTION" class="image" id="revImage">
         <img src="COMING.png" alt="COMING" class="image" id="comImage">
-      </div>
-      
-    </section>
-    
-    <script>
-      // Define your count to date (replace this with your target date)
-      const countToDate = new Date("2023-10-31T00:00:00").getTime();
+    </div>
+</body>
+<script>
+  // Define your count to date (replace this with your target date)
+  const countToDate = new Date("2023-10-31T00:00:00").getTime();
 
-      setInterval(() => {
-          const currentDate = new Date();
-          const timeBetweenDates = Math.ceil((countToDate - currentDate) / 1000);
-          flipAllcard(timeBetweenDates);
-      }, 250);
+  setInterval(() => {
+      const currentDate = new Date().getTime();
+      const timeBetweenDates = Math.ceil((countToDate - currentDate) / 1000);
+      flipAllCards(timeBetweenDates);
+  }, 250);
 
-      /* Populate the cards with the data coming from the Declared Time */
-      function flipAllcard(time) {
-          const seconds = ('0' + time % 60).slice(-2); // Add leading zero to seconds
-          const minutes = ('0' + Math.floor(time / 60) % 60).slice(-2); // Add leading zero to minutes
-          const hours = ('0' + Math.floor(time / 3600) % 24).slice(-2); // Add leading zero to hours
-          const days = ('0' + Math.floor(time / 86400)).slice(-2); // Add leading zero to days
+  function flipAllCards(time) {
+      const seconds = ('0' + (time % 60)).slice(-2); // Add leading zero to seconds
+      const minutes = ('0' + Math.floor(time / 60) % 60).slice(-2); // Add leading zero to minutes
+      const hours = ('0' + Math.floor(time / 3600) % 24).slice(-2); // Add leading zero to hours
+      const days = ('0' + Math.floor(time / 86400)).slice(-2); // Add leading zero to days
 
-          document.getElementById("digit1").style.backgroundImage = "url(" + days.toString()[0] + ".png)";
-          document.getElementById("digit2").style.backgroundImage = "url(" + days.toString()[1] + ".png)";
-          document.getElementById("digit3").style.backgroundImage = "url(" + hours.toString()[0] + ".png)";
-          document.getElementById("digit4").style.backgroundImage = "url(" + hours.toString()[1] + ".png)";
-          document.getElementById("digit5").style.backgroundImage = "url(" + minutes.toString()[0] + ".png)";
-          document.getElementById("digit6").style.backgroundImage = "url(" + minutes.toString()[1] + ".png)";
-          document.getElementById("digit7").style.backgroundImage = "url(" + seconds.toString()[0] + ".png)";
-          document.getElementById("digit8").style.backgroundImage = "url(" + seconds.toString()[1] + ".png)";
+      document.getElementById("digit1").style.backgroundImage = `url(${days[0]}.png)`;
+      document.getElementById("digit2").style.backgroundImage = `url(${days[1]}.png)`;
+      document.getElementById("digit3").style.backgroundImage = `url(${hours[0]}.png)`;
+      document.getElementById("digit4").style.backgroundImage = `url(${hours[1]}.png)`;
+      document.getElementById("digit5").style.backgroundImage = `url(${minutes[0]}.png)`;
+      document.getElementById("digit6").style.backgroundImage = `url(${minutes[1]}.png)`;
+      document.getElementById("digit7").style.backgroundImage = `url(${seconds[0]}.png)`;
+      document.getElementById("digit8").style.backgroundImage = `url(${seconds[1]}.png)`;
 
-          // Add spaces between days, hours, minutes, and seconds
-          document.getElementById("space1").style.backgroundImage = "url(_.png)";
-          document.getElementById("space2").style.backgroundImage = "url(_.png)";
-          document.getElementById("space3").style.backgroundImage = "url(_.png)";
-      }
-      const video=document.getElementById('myVideo')
-      readyButton.addEventListener("click", () => {
-        // Hide the "Are you ready?" button and show interactions content
-        readyButton.style.display = "none";
+      // Add spaces between days, hours, minutes, and seconds
+      document.getElementById("space1").style.backgroundImage = "url(_.png)";
+      document.getElementById("space2").style.backgroundImage = "url(_.png)";
+      document.getElementById("space3").style.backgroundImage = "url(_.png)";
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("myVideo");
+    const unmuteButton = document.getElementById("unmuteButton");
+
+    unmuteButton.addEventListener("click", function() {
+        // Unmute the video
         video.muted = false;
 
-    
-        // Perform interactions when the user clicks "Are you ready?" button
-        // Add your interactions and logic here
+        // Hide the unmute button after 2 seconds
+        setTimeout(function() {
+            unmuteButton.style.display = "none";
+        }, 2000);
     });
+});
 
-      
-  </script>         
-  </body>
+</script>
+
 </html>
