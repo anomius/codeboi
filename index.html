@@ -129,9 +129,8 @@
           positionElement(secondsImage,digit7Container,5,12);
           
         }
-        const mobile = window.matchMedia('(max-width: 768px)');
         
-        if(mobile.matches){
+       
           const image = document.createElement("img");
           image.src = "Andre above.png"; // Set the source of the image
           image.alt = "AABOVE"; // Set alt text for accessibility
@@ -142,7 +141,7 @@
           image.style.zIndex = "-11";
           image.style.left=0;
           image.style.top=0;
-        }
+        
         
         function positionElement(element, digitContainer, offsetX, offsetY) {
           const digitX = digitContainer.getBoundingClientRect().right;
