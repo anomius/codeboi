@@ -18,7 +18,7 @@
       
       <!--Time-->
       <div id="vido">
-        <video autoplay muted loop id="myVideo">
+        <video autoplay muted loop id="myVideo" >
           <source src="vid2.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
@@ -60,6 +60,8 @@
           const timeBetweenDates = Math.ceil((countToDate - currentDate) / 1000);
           flipAllcard(timeBetweenDates);
         }, 250);
+        setInterval(()=>{positionAllElement();},2000)
+        
         
         /* Populate the cards with the data coming from the Declared Time */
         function flipAllcard(time) {
@@ -76,7 +78,7 @@
           document.getElementById("digit6Image").src= + minutes.toString()[1] + ".png";
           document.getElementById("digit7Image").src = seconds.toString()[0] + ".png";
           document.getElementById("digit8Image").src = seconds.toString()[1] + ".png";
-          positionAllElement();
+          
           // Add spaces between days, hours, minutes, and seconds
           //document.getElementById("space1").style.backgroundImage = "url(_.png)";
           //document.getElementById("space2").style.backgroundImage = "url(_.png)";
@@ -133,7 +135,7 @@
           const image = document.createElement("img");
           image.src = "Andre above.png"; // Set the source of the image
           image.alt = "AABOVE"; // Set alt text for accessibility
-          image.style.width = "100%"; // Set the width of the image as needed
+          image.style.width = "100vw"; // Set the width of the image as needed
           document.body.appendChild(image); 
           image.style.position = "fixed"; // Set the position to fixed
           image.style.zIndex = "-11";
