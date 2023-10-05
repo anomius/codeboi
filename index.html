@@ -12,7 +12,7 @@
 <body id="app" class="d-flex h-100">
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <body class="relative w-full h-screen m-0 bg-gradient-to-b from-mostlyBlackBlue to-veryDarkBlue
+  <body class="relative w-full h-screen m-0 
       font-redHatText">
     <section class="w-full h-full flex flex-col justify-center items-center" id="vid">
       
@@ -50,25 +50,24 @@
         </div>
       </div>
       
-    </section>
-    
-    <script>
-      // Define your count to date (replace this with your target date)
-      const countToDate = new Date("2023-10-31T00:00:00").getTime();
-
-      setInterval(() => {
+      
+      <script>
+        // Define your count to date (replace this with your target date)
+        const countToDate = new Date("2023-10-31T00:00:00").getTime();
+        
+        setInterval(() => {
           const currentDate = new Date();
           const timeBetweenDates = Math.ceil((countToDate - currentDate) / 1000);
           flipAllcard(timeBetweenDates);
-      }, 250);
-
-      /* Populate the cards with the data coming from the Declared Time */
-      function flipAllcard(time) {
+        }, 250);
+        
+        /* Populate the cards with the data coming from the Declared Time */
+        function flipAllcard(time) {
           const seconds = ('0' + time % 60).slice(-2); // Add leading zero to seconds
           const minutes = ('0' + Math.floor(time / 60) % 60).slice(-2); // Add leading zero to minutes
           const hours = ('0' + Math.floor(time / 3600) % 24).slice(-2); // Add leading zero to hours
           const days = ('0' + Math.floor(time / 86400)).slice(-2); // Add leading zero to days
-
+          
           document.getElementById("digit1Image").src= + days.toString()[0] + ".png";
           document.getElementById("digit2Image").src= + days.toString()[1] + ".png";
           document.getElementById("digit3Image").src= + hours.toString()[0] + ".png";
@@ -77,75 +76,89 @@
           document.getElementById("digit6Image").src= + minutes.toString()[1] + ".png";
           document.getElementById("digit7Image").src = seconds.toString()[0] + ".png";
           document.getElementById("digit8Image").src = seconds.toString()[1] + ".png";
-
+          positionAllElement();
           // Add spaces between days, hours, minutes, and seconds
           //document.getElementById("space1").style.backgroundImage = "url(_.png)";
           //document.getElementById("space2").style.backgroundImage = "url(_.png)";
           //document.getElementById("space3").style.backgroundImage = "url(_.png)";
-      }
-      const video = document.getElementById('myVideo');
-const vid = document.getElementById('vid');
-
-vid.addEventListener("click", () => {
-    if (video.muted) {
-        video.muted = false;
-    } else {
-        video.muted = true;
-    }
-});
-function updateImageWidth() {
-  const digit1 = document.getElementById("digit1Image");
-  const digit2 = document.getElementById("digit2Image");
-  const digitImages = document.querySelectorAll(".image");
-
-  const width = (parseFloat(window.getComputedStyle(digit1).width) +
-                parseFloat(window.getComputedStyle(digit2).width)) / 2;
-
-  digitImages.forEach(image => {
-    image.style.width = `${width * 8 + 10}px`;
-  });
-}
-updateImageWidth();
-
-// Update the image widths whenever the window is resized
-window.addEventListener('resize', updateImageWidth);
-// Get the digit 1 and digit 2 containers and days element
-const digit1Container = document.getElementById("digit1");
-const digit3Container = document.getElementById("digit3");
-const digit5Container = document.getElementById("digit5");
-const digit7Container = document.getElementById("digit7");
-
-const daysImage = document.getElementById("daysImage");
-const hoursImage = document.getElementById("hoursImage");
-const minImage = document.getElementById("minImage");
-const secondsImage = document.getElementById("secondsImage");
-
-function positionAllElement() {
-  // Get the X and Y coordinates of digit 1 and digit 2 containers
-  positionElement(daysImage,digit1Container,5,10);
-  positionElement(hoursImage,digit3Container,5,10);
-  positionElement(minImage,digit5Container,5,10);
-  positionElement(secondsImage,digit7Container,5,10);
-  
-}
-
-function positionElement(element, digitContainer, offsetX, offsetY) {
-  const digitX = digitContainer.getBoundingClientRect().right;
-  const digitY = digitContainer.getBoundingClientRect().bottom;
-  
-  const elementX = digitX- (element.width/2)+offsetX;
-  const elementY = digitY - (element.height/2)+offsetY;
-
-  element.style.left = `${elementX}px`;
-  element.style.top = `${elementY}px`;
-}
-
-// Call the function to position the days element initially
-positionAllElement();
-
-// Call the function whenever the window is resized
-window.addEventListener('resize', positionAllElement);
-      
-  </script>         
-  </body>
-</html>
+        }
+        const video = document.getElementById('myVideo');
+        const vid = document.getElementById('vid');
+        
+        vid.addEventListener("click", () => {
+          if (video.muted) {
+            video.muted = false;
+          } else {
+            video.muted = true;
+          }
+        });
+        function updateImageWidth() {
+          const digit1 = document.getElementById("digit1Image");
+          const digit2 = document.getElementById("digit2Image");
+          const digitImages = document.querySelectorAll(".image");
+          
+          const width = (parseFloat(window.getComputedStyle(digit1).width) +
+          parseFloat(window.getComputedStyle(digit2).width)) / 2;
+          
+          digitImages.forEach(image => {
+            image.style.width = `${width * 7 + 10}px`;
+          });
+        }
+        updateImageWidth();
+        
+        // Update the image widths whenever the window is resized
+        window.addEventListener('resize', updateImageWidth);
+        // Get the digit 1 and digit 2 containers and days element
+        const digit1Container = document.getElementById("digit1");
+        const digit3Container = document.getElementById("digit3");
+        const digit5Container = document.getElementById("digit5");
+        const digit7Container = document.getElementById("digit7");
+        
+        const daysImage = document.getElementById("daysImage");
+        const hoursImage = document.getElementById("hoursImage");
+        const minImage = document.getElementById("minImage");
+        const secondsImage = document.getElementById("secondsImage");
+        
+        function positionAllElement() {
+          // Get the X and Y coordinates of digit 1 and digit 2 containers
+          positionElement(daysImage,digit1Container,5,12);
+          positionElement(hoursImage,digit3Container,5,12);
+          positionElement(minImage,digit5Container,5,12);
+          positionElement(secondsImage,digit7Container,5,12);
+          
+        }
+        const mobile = window.matchMedia('(min-width: 768px)');
+        
+        if(mobile.matches){
+          const image = document.createElement("img");
+          image.src = "Andre above.png"; // Set the source of the image
+          image.alt = "AABOVE"; // Set alt text for accessibility
+          image.style.width = "100%"; // Set the width of the image as needed
+          document.body.appendChild(image); 
+          image.style.position = "fixed"; // Set the position to fixed
+          image.style.zIndex = "-11";
+          image.style.left=0;
+          image.style.top=0;
+        }
+        
+        function positionElement(element, digitContainer, offsetX, offsetY) {
+          const digitX = digitContainer.getBoundingClientRect().right;
+          const digitY = digitContainer.getBoundingClientRect().bottom;
+          
+          const elementX = digitX- (element.width/2)+offsetX;
+          const elementY = digitY - (element.height/2)+Math.min(offsetY,element.height);
+          
+          element.style.left = `${elementX}px`;
+          element.style.top = `${elementY}px`;
+        }
+        
+        // Call the function to position the days element initially
+        positionAllElement();
+        
+        // Call the function whenever the window is resized
+        window.addEventListener('resize', positionAllElement);
+        
+      </script>         
+    </section>
+    </body>
+    </html>
