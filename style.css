@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  
+
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -18,7 +18,6 @@ body {
   left: 0;
 }
 
-
 #counter {
   width: 100vw;
   height: 15vh;
@@ -28,193 +27,134 @@ body {
   background-color: #000;
 }
 
-
 .digit {
-  width: 4vw; /* Set the width and height according to your number images */
-  height: 10vh;
-  /* width: 50px; /* Set the width and height according to your number images */
-  /* height: 75px; /* Set the width and height according to your number images */
-  
+  width: 4vw;
   display: inline-block;
-  top:0vh;
+  top: 0vh;
   -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
   filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
   animation: move-animation 2s infinite linear,
     glow-animation 1s infinite alternate;
 }
 
-
 .image {
-  width: 24.5vw; /* Set the width according to your image size */
   height: auto; /* Set the height according to your image size */
   position: fixed;
-  top: 93vh;
-  
-  
+
   display: inline-block;
-  
+
   -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
   filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
   animation: move-animation 20s infinite linear,
-  glow-animation 1s infinite alternate;
+    glow-animation 1s infinite alternate;
 }
 @media screen and (min-width: 2500px) {
   .image {
     width: 300px;
-    height: auto; 
+    height: auto;
     position: fixed;
     margin-inline-start: 40%;
     bottom: 30px;
-    
   }
   .digit {
     width: 70px; /* Set the width and height according to your number images */
     height: auto;
-    
+
     display: inline-block;
-    top:20px;
+    top: 20px;
     -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
     filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
     animation: move-animation 2s infinite linear,
-    glow-animation 1s infinite alternate;
+      glow-animation 1s infinite alternate;
   }
 
-  
   #daysImage {
-    left: 30.6vw/* Adjust the left position according to your layout */
+    left: 30.6vw; /* Adjust the left position according to your layout */
   }
-  
+
   #hoursImage {
     left: 30.6vw; /* Adjust the left position according to your layout */
   }
-  
+
   #minImage {
     left: 40vw; /* Adjust the left position according to your layout */
   }
-  
+
   #secondsImage {
     left: 57.5vw; /* Adjust the left position according to your layout */
   }
-  #revImage{
-    
+  #revImage {
     left: 10px;
     animation: fade-animation 10s infinite linear,
-    glow-animation 1s infinite alternate;
+      glow-animation 1s infinite alternate;
   }
-  #comImage{
-
-    right: 10px;
+  #comImage {
+    right: 1px;
     animation: fade-animation 10s infinite linear,
-    glow-animation 1s infinite alternate;
+      glow-animation 1s infinite alternate;
   }
-  
 }
 
 @media screen and (min-width: 1400px) {
-
   .image {
-    width: 24.5vw; 
-    height: auto; 
     position: fixed;
     top: 93vh;
-    
   }
-  .image_lol{
+  .image_lol {
     width: 25vw;
-    height: auto; 
+    height: auto;
     position: fixed;
   }
-  .digit{
+  .digit {
     bottom: 40px;
   }
-  #counter{
+  #counter {
     display: inline;
   }
 }
-  
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 786px) {
+  .digit{
+    width: 6vw;
+  }
   .image {
-    width: 100px; 
-    height: 56px; 
-    top: 87vh;
-    position: absolute;
+    height: auto;
+    bottom: 4vh;
+    left: 2vw;
   }
-  .image_lol{
-    width: 25vw;
-    height: auto; 
-    position: fixed;
-    top:10vh;
+  .image_lol {
     display: none;
   }
-  .rc{
+  #vido {
     display: none;
-  }
-  .digit {
-    width: 4vw; 
-    height: 12vh;
-    position: absolute;
-    display: inline-block;
-    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
-    filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
-    animation: move-animation 2s infinite linear,
-    glow-animation 1s infinite alternate;
-  }
-  #counter {
-    width: 100vw;
-    height:300px;
-    position: fixed;
-    bottom: 0;
-  
-    background-color: #000;
   }
   #myVideo {
-    filter: opacity(10%);
-    object-fit:contain;
-    width: 100vw;
-    height: auto;
-    position: absolute;
-    z-index: -10;
-    margin: auto;
-  }  
+    filter: opacity(0%);
+  }
+
   #revImage,
   #comImage {
     display: none;
   }
 }
 
-
-.image_lol{
+.image_lol {
   width: 25vw;
-  height: auto; 
+  height: auto;
   position: fixed;
 }
-#daysImage {
-  left: 17.5vw; /* Adjust the left position according to your layout */
-}
 
-#hoursImage {
-  left: 30.6vw; /* Adjust the left position according to your layout */
-}
-
-#minImage {
-  left: 44vw; /* Adjust the left position according to your layout */
-}
-
-#secondsImage {
-  left: 57.5vw; /* Adjust the left position according to your layout */
-}
-#revImage{
+#revImage {
   top: 87vh;
   left: 1vw;
   animation: fade-animation 10s infinite linear,
-  glow-animation 1s infinite alternate;
+    glow-animation 1s infinite alternate;
 }
-#comImage{
+#comImage {
   top: 87vh;
-  right: 0.5vw;
+  right: 1px;
   animation: fade-animation 10s infinite linear,
-  glow-animation 1s infinite alternate;
+    glow-animation 1s infinite alternate;
 }
 
 @keyframes glow-animation {
@@ -254,7 +194,7 @@ body {
     opacity: 0.2;
     transform: scale(0.95);
   }
-  50%{
+  50% {
     opacity: 1;
     transform: scale(1);
   }
