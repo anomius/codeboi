@@ -45,11 +45,11 @@ body {
 
 
 .image {
-  width: 25vw; /* Set the width according to your image size */
+  width: 24.5vw; /* Set the width according to your image size */
   height: auto; /* Set the height according to your image size */
   position: fixed;
-  top: 90vh;
-  bottom: 40px;
+  top: 93vh;
+  bottom: 0px;
   
   display: inline-block;
   
@@ -111,13 +111,13 @@ body {
 }
 
 @media screen and (min-width: 1400px) {
+
   .image {
-    width: 300px;
+    width: 24.5vw; 
     height: auto; 
     position: fixed;
-    margin-inline-start: 10%;
-    bottom: 30px;
-    padding-left: 2vw;
+    top: 93vh;
+    bottom: 0px;
   }
   .image_lol{
     width: 25vw;
@@ -130,30 +130,13 @@ body {
   #counter{
     display: inline;
   }
-  #daysImage {
-    left: /* Adjust the left position according to your layout */
-  }
-  
-  #hoursImage {
-    left: 30.6vw; /* Adjust the left position according to your layout */
-  }
-  
-  #minImage {
-    left: 40vw; /* Adjust the left position according to your layout */
-  }
-  
-  #secondsImage {
-    left: 57.5vw; /* Adjust the left position according to your layout */
-  }
-  
-  
 }
   
 
 @media screen and (max-width: 768px) {
   .image {
-    width: 100px; /* Set the width according to your design for phones */
-    height: 56px; /* Set the height according to your design for phones */
+    width: 100px; 
+    height: 56px; 
     top: 87vh;
     position: absolute;
   }
@@ -162,9 +145,10 @@ body {
     height: auto; 
     position: fixed;
     top:10vh;
+    display: none;
   }
   .digit {
-    width: 4vw; /* Set the width and height according to your number images */
+    width: 4vw; 
     height: 12vh;
     position: absolute;
     display: inline-block;
@@ -182,30 +166,14 @@ body {
     background-color: #000;
   }
   #myVideo {
-    filter: opacity(100%);
+    filter: opacity(10%);
     object-fit:contain;
     width: 100vw;
     height: auto;
     position: absolute;
     z-index: -10;
     margin: auto;
-  }
-  #revImage{
-    top: 87vh;
-    align-self:center ;
-    position: fixed;
-    animation: fade-animation 10s infinite linear,
-    glow-animation 1s infinite alternate;
-    z-index: 2;
-  }
-  #comImage{
-    top: 89vh;
-    align-self:center ;
-    position: fixed;
-    animation: fade-animation 10s infinite linear,
-    glow-animation 1s infinite alternate;
-    z-index: 2
-  }
+  }  
   #revImage,
   #comImage {
     display: none;
