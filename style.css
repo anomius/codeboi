@@ -58,12 +58,13 @@ body {
   animation: move-animation 20s infinite linear,
   glow-animation 1s infinite alternate;
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 2500px) {
   .image {
     width: 300px;
-    height: auto;
-    bottom:50px ;
-    position:absolute;
+    height: auto; 
+    position: fixed;
+    margin-inline-start: 40%;
+    bottom: 30px;
     
   }
   .digit {
@@ -109,6 +110,44 @@ body {
   
 }
 
+@media screen and (min-width: 1400px) {
+  .image {
+    width: 300px;
+    height: auto; 
+    position: fixed;
+    margin-inline-start: 10%;
+    bottom: 30px;
+    padding-left: 2vw;
+  }
+  .image_lol{
+    width: 25vw;
+    height: auto; 
+    position: fixed;
+  }
+  .digit{
+    bottom: 40px;
+  }
+  #counter{
+    display: inline;
+  }
+  #daysImage {
+    left: /* Adjust the left position according to your layout */
+  }
+  
+  #hoursImage {
+    left: 30.6vw; /* Adjust the left position according to your layout */
+  }
+  
+  #minImage {
+    left: 40vw; /* Adjust the left position according to your layout */
+  }
+  
+  #secondsImage {
+    left: 57.5vw; /* Adjust the left position according to your layout */
+  }
+  
+  
+}
   
 
 @media screen and (max-width: 768px) {
@@ -118,9 +157,15 @@ body {
     top: 87vh;
     position: absolute;
   }
+  .image_lol{
+    width: 25vw;
+    height: auto; 
+    position: fixed;
+    top:10vh;
+  }
   .digit {
     width: 4vw; /* Set the width and height according to your number images */
-    height: auto;
+    height: 12vh;
     position: absolute;
     display: inline-block;
     -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
@@ -168,7 +213,11 @@ body {
 }
 
 
-
+.image_lol{
+  width: 25vw;
+  height: auto; 
+  position: fixed;
+}
 #daysImage {
   left: 17.5vw; /* Adjust the left position according to your layout */
 }
