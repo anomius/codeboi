@@ -49,7 +49,7 @@ body {
   height: auto; /* Set the height according to your image size */
   position: fixed;
   top: 93vh;
-  bottom: 0px;
+  
   
   display: inline-block;
   
@@ -117,7 +117,7 @@ body {
     height: auto; 
     position: fixed;
     top: 93vh;
-    bottom: 0px;
+    
   }
   .image_lol{
     width: 25vw;
