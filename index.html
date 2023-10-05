@@ -25,17 +25,17 @@
       <div bg-gradient-to-b from-black100 to-black600 id="counter">
     
         <div id="timer">
-          <div class="digit" id="digit1"></div>
-          <div class="digit" id="digit2"></div>
+          <div class="digit" id="digit1"><img src="0.png" alt="Digit 1" class="digitImage" id="digit1Image"></div>
+          <div class="digit" id="digit2"><img src="0.png" alt="Digit 1" class="digitImage" id="digit2Image"></div>
           <div class="digit" id="space1"></div>
-          <div class="digit" id="digit3"></div>
-          <div class="digit" id="digit4"></div>
+          <div class="digit" id="digit3"><img src="0.png" alt="Digit 1" class="digitImage" id="digit3Image"></div>
+          <div class="digit" id="digit4"><img src="0.png" alt="Digit 1" class="digitImage"  id="digit4Image"></div>
           <div class="digit" id="space2"></div>
-          <div class="digit" id="digit5"></div>
-          <div class="digit" id="digit6"></div>
+          <div class="digit" id="digit5"><img src="0.png" alt="Digit 1" class="digitImage"  id="digit5Image"></div>
+          <div class="digit" id="digit6"><img src="0.png" alt="Digit 1" class="digitImage"  id="digit6Image"></div>
           <div class="digit" id="space3"></div>
-          <div class="digit" id="digit7"></div>
-          <div class="digit" id="digit8"></div>
+          <div class="digit" id="digit7"><img src="0.png" alt="Digit 1" class="digitImage"  id="digit7Image"></div>
+          <div class="digit" id="digit8"><img src="0.png" alt="Digit 1" class="digitImage" id="digit8Image"></div>
         </div>
         <img src="DAY.png" alt="Days" class="image" id="daysImage">
         <img src="HOUR.png" alt="Hours" class="image" id="hoursImage">
@@ -64,14 +64,14 @@
           const hours = ('0' + Math.floor(time / 3600) % 24).slice(-2); // Add leading zero to hours
           const days = ('0' + Math.floor(time / 86400)).slice(-2); // Add leading zero to days
 
-          document.getElementById("digit1").style.backgroundImage = "url(" + days.toString()[0] + ".png)";
-          document.getElementById("digit2").style.backgroundImage = "url(" + days.toString()[1] + ".png)";
-          document.getElementById("digit3").style.backgroundImage = "url(" + hours.toString()[0] + ".png)";
-          document.getElementById("digit4").style.backgroundImage = "url(" + hours.toString()[1] + ".png)";
-          document.getElementById("digit5").style.backgroundImage = "url(" + minutes.toString()[0] + ".png)";
-          document.getElementById("digit6").style.backgroundImage = "url(" + minutes.toString()[1] + ".png)";
-          document.getElementById("digit7").style.backgroundImage = "url(" + seconds.toString()[0] + ".png)";
-          document.getElementById("digit8").style.backgroundImage = "url(" + seconds.toString()[1] + ".png)";
+          document.getElementById("digit1Image").src= + days.toString()[0] + ".png";
+          document.getElementById("digit2Image").src= + days.toString()[1] + ".png";
+          document.getElementById("digit3Image").src= + hours.toString()[0] + ".png";
+          document.getElementById("digit4Image").src= + hours.toString()[1] + ".png";
+          document.getElementById("digit5Image").src= + minutes.toString()[0] + ".png";
+          document.getElementById("digit6Image").src= + minutes.toString()[1] + ".png";
+          document.getElementById("digit7Image").src = seconds.toString()[0] + ".png";
+          document.getElementById("digit8Image").src = seconds.toString()[1] + ".png";
 
           // Add spaces between days, hours, minutes, and seconds
           //document.getElementById("space1").style.backgroundImage = "url(_.png)";
