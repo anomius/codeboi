@@ -44,6 +44,159 @@ body {
 }
 
 
+.image {
+  width: 25vw; /* Set the width according to your image size */
+  height: auto; /* Set the height according to your image size */
+  position: fixed;
+  top: 90vh;
+  bottom: 40px;
+  
+  display: inline-block;
+  
+  -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
+  filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
+  animation: move-animation 20s infinite linear,
+  glow-animation 1s infinite alternate;
+}
+@media screen and (min-width: 1400px) {
+  .image {
+    width: 300px;
+    height: auto;
+    bottom:50px ;
+    position:absolute;
+    
+  }
+  .digit {
+    width: 70px; /* Set the width and height according to your number images */
+    height: auto;
+    
+    display: inline-block;
+    top:20px;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
+    filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
+    animation: move-animation 2s infinite linear,
+    glow-animation 1s infinite alternate;
+  }
+
+  
+  #daysImage {
+    left: 30.6vw/* Adjust the left position according to your layout */
+  }
+  
+  #hoursImage {
+    left: 30.6vw; /* Adjust the left position according to your layout */
+  }
+  
+  #minImage {
+    left: 40vw; /* Adjust the left position according to your layout */
+  }
+  
+  #secondsImage {
+    left: 57.5vw; /* Adjust the left position according to your layout */
+  }
+  #revImage{
+    
+    left: 10px;
+    animation: fade-animation 10s infinite linear,
+    glow-animation 1s infinite alternate;
+  }
+  #comImage{
+
+    right: 10px;
+    animation: fade-animation 10s infinite linear,
+    glow-animation 1s infinite alternate;
+  }
+  
+}
+
+  
+
+@media screen and (max-width: 768px) {
+  .image {
+    width: 100px; /* Set the width according to your design for phones */
+    height: 56px; /* Set the height according to your design for phones */
+    top: 87vh;
+    position: absolute;
+  }
+  .digit {
+    width: 4vw; /* Set the width and height according to your number images */
+    height: auto;
+    position: absolute;
+    display: inline-block;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
+    filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
+    animation: move-animation 2s infinite linear,
+    glow-animation 1s infinite alternate;
+  }
+  #counter {
+    width: 100vw;
+    height:300px;
+    position: fixed;
+    bottom: 0;
+  
+    background-color: #000;
+  }
+  #myVideo {
+    filter: opacity(100%);
+    object-fit:contain;
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    z-index: -10;
+    margin: auto;
+  }
+  #revImage{
+    top: 87vh;
+    align-self:center ;
+    position: fixed;
+    animation: fade-animation 10s infinite linear,
+    glow-animation 1s infinite alternate;
+    z-index: 2;
+  }
+  #comImage{
+    top: 89vh;
+    align-self:center ;
+    position: fixed;
+    animation: fade-animation 10s infinite linear,
+    glow-animation 1s infinite alternate;
+    z-index: 2
+  }
+  #revImage,
+  #comImage {
+    display: none;
+  }
+}
+
+
+
+#daysImage {
+  left: 17.5vw; /* Adjust the left position according to your layout */
+}
+
+#hoursImage {
+  left: 30.6vw; /* Adjust the left position according to your layout */
+}
+
+#minImage {
+  left: 44vw; /* Adjust the left position according to your layout */
+}
+
+#secondsImage {
+  left: 57.5vw; /* Adjust the left position according to your layout */
+}
+#revImage{
+  top: 87vh;
+  left: 1vw;
+  animation: fade-animation 10s infinite linear,
+  glow-animation 1s infinite alternate;
+}
+#comImage{
+  top: 87vh;
+  right: 0.5vw;
+  animation: fade-animation 10s infinite linear,
+  glow-animation 1s infinite alternate;
+}
+
 @keyframes glow-animation {
   from {
     -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0, 0.8));
@@ -89,144 +242,4 @@ body {
     opacity: 0.2;
     transform: scale(0.95);
   }
-}
-.image {
-  width: 25vw; /* Set the width according to your image size */
-  height: auto; /* Set the height according to your image size */
-  position: fixed;
-  top: 90vh;
-  bottom: 40px;
-  
-  display: inline-block;
-
-  -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
-  filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
-  animation: move-animation 20s infinite linear,
-    glow-animation 1s infinite alternate;
-}
-@media screen and (min-width: 1400px) {
-  .image {
-      width: 450px;
-      height: auto;
-      top:6vh;
-      position:absolute
-      
-
-    }
-    .digit {
-      width: 70px; /* Set the width and height according to your number images */
-      height: auto;
-      
-      display: inline-block;
-      top:20px;
-      -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
-      filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
-      animation: move-animation 2s infinite linear,
-        glow-animation 1s infinite alternate;
-    }
-    #daysImage {
-      left: 17.5vw; /* Adjust the left position according to your layout */
-    }
-    
-    #hoursImage {
-      left: 30.6vw; /* Adjust the left position according to your layout */
-    }
-    
-    #minImage {
-      left: 40vw; /* Adjust the left position according to your layout */
-    }
-    
-    #secondsImage {
-      left: 57.5vw; /* Adjust the left position according to your layout */
-    }
-    
-
-}
-@media screen and (min-width: 2000px) {
-  .image {
-      width: 650px;
-      height: auto;
-      top:7vh;
-      position: absolute;
-
-    }
-    .digit {
-      width: 100px; /* Set the width and height according to your number images */
-      height: auto;
-      display: inline-block;
-      top:1vh;
-      -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
-      filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
-      animation: move-animation 2s infinite linear,
-        glow-animation 1s infinite alternate;
-    }
-    #daysImage, #hoursImage, #minImage, #secondsImage {
-      position: relative;
-      left: auto; /* Reset the left property for responsive behavior */
-  }
-
-}
-@media screen and (max-width: 600px) {
-  .image {
-      width: 80px; /* Set the width according to your design for phones */
-      height: 56px; /* Set the height according to your design for phones */
-      top: 87vh;
-      position: absolute;
-  }
-  .digit {
-    width: 4vw; /* Set the width and height according to your number images */
-    height: auto;
-    position: absolute;
-    display: inline-block;
-    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
-    filter: drop-shadow(0px 0px 10px rgb(255, 215, 0));
-    animation: move-animation 2s infinite linear,
-      glow-animation 1s infinite alternate;
-  }
-  #revImage{
-    top: 87vh;
-    align-self:center ;
-    position: fixed;
-    animation: fade-animation 10s infinite linear,
-      glow-animation 1s infinite alternate;
-    z-index: 2;
-  }
-  #comImage{
-    top: 89vh;
-    align-self:center ;
-    position: fixed;
-    animation: fade-animation 10s infinite linear,
-      glow-animation 1s infinite alternate;
-    z-index: 2
-  }
-}
-
-
-
-#daysImage {
-  left: 17.5vw; /* Adjust the left position according to your layout */
-}
-
-#hoursImage {
-  left: 30.6vw; /* Adjust the left position according to your layout */
-}
-
-#minImage {
-  left: 44vw; /* Adjust the left position according to your layout */
-}
-
-#secondsImage {
-  left: 57.5vw; /* Adjust the left position according to your layout */
-}
-#revImage{
-  top: 87vh;
-  left: 1vw;
-  animation: fade-animation 10s infinite linear,
-    glow-animation 1s infinite alternate;
-}
-#comImage{
-  top: 87vh;
-  right: 0.5vw;
-  animation: fade-animation 10s infinite linear,
-    glow-animation 1s infinite alternate;
 }
