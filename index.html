@@ -60,7 +60,8 @@
           const timeBetweenDates = Math.ceil((countToDate - currentDate) / 1000);
           flipAllcard(timeBetweenDates);
         }, 250);
-        setInterval(()=>{positionAllElement();},2000)
+        setInterval(()=>{positionAllElement();
+          test();},2000)
         
         
         /* Populate the cards with the data coming from the Declared Time */
@@ -129,20 +130,33 @@
           positionElement(secondsImage,digit7Container,5,12);
           
         }
-        const mobile = window.matchMedia('min-width: 768px');
-        
-        if(mobile.matches){
-          const image = document.createElement("img");
-          image.src = "Andre above.png"; // Set the source of the image
-          image.alt = "AABOVE"; // Set alt text for accessibility
-          image.style.height = "100vh"; // Set the width of the image as needed
-          image.style.width = "100vw"; // Set the width of the image as needed
-          document.body.appendChild(image); 
-          image.style.position = "fixed"; // Set the position to fixed
-          image.style.zIndex = "-11";
-          image.style.left=0;
-          image.style.top=0;
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        const image = document.createElement("img");
+        image.src = "Andre above.png"; // Set the source of the image
+        image.alt = "AABOVE"; // Set alt text for accessibility
+        image.style.width = "100%"; // Set the width of the image as needed
+        image.style.position = "fixed"; // Set the position to fixed
+        image.style.top="0";
+        image.style.height="100vh"
+        image.style.zIndex = "-11"; // Set the z-index to position the image behind the counter
+        document.body.appendChild(image); // Append the image to the body or another suitable container
+
+        function toggleMedia() {
+          if (mediaQuery.matches) {
+            // Mobile mode: Show image and hide video
+            video.style.display = "none";
+            image.style.display = "block";
+          } else {
+            // Non-mobile mode: Show video and hide image
+            video.style.display = "block";
+            image.style.display = "none";
+          }
         }
+
+// Initial check and add event listener for changes
+toggleMedia();
+mediaQuery.addListener(toggleMedia);
+     
         
         function positionElement(element, digitContainer, offsetX, offsetY) {
           const digitX = digitContainer.getBoundingClientRect().right;
