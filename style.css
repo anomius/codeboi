@@ -147,6 +147,9 @@ body {
     top:10vh;
     display: none;
   }
+  .rc{
+    display: none;
+  }
   .digit {
     width: 4vw; 
     height: 12vh;
