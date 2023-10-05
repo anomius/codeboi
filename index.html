@@ -12,15 +12,16 @@
 
   <body class="relative w-full h-screen m-0 bg-gradient-to-b from-mostlyBlackBlue to-veryDarkBlue
       font-redHatText">
-    <section class="w-full h-full flex flex-col justify-center items-center">
+    <section class="w-full h-full flex flex-col justify-center items-center" id="vid">
       
       <!--Time-->
-      <button id="readyButton" class="ready-button">Are you ready?</button>
-      <video autoplay muted loop id="myVideo">
-        <source src="vid2.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
-
+      <div id="vid">
+        <video autoplay muted loop id="myVideo" onclick="this.unmute()">
+          <source src="vid2.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      
       
       <div bg-gradient-to-b from-black100 to-black600 id="counter">
     
@@ -78,16 +79,16 @@
           //document.getElementById("space2").style.backgroundImage = "url(_.png)";
           //document.getElementById("space3").style.backgroundImage = "url(_.png)";
       }
-      const video=document.getElementById('myVideo')
-      readyButton.addEventListener("click", () => {
-        // Hide the "Are you ready?" button and show interactions content
-        readyButton.style.display = "none";
-        video.muted = false;
+      const video = document.getElementById('myVideo');
+const vid = document.getElementById('vid');
 
-    
-        // Perform interactions when the user clicks "Are you ready?" button
-        // Add your interactions and logic here
-    });
+vid.addEventListener("click", () => {
+    if (video.muted) {
+        video.muted = false;
+    } else {
+        video.muted = true;
+    }
+});
 
       
   </script>         
