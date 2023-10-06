@@ -6,9 +6,6 @@ body {
   height: 100vh;
   background-color: transparent;
 }
-section{
-  background-color: transparent;
-}
 #myVideo {
   filter: opacity(100%);
   object-fit: cover;
@@ -35,17 +32,17 @@ section{
   bottom: 15%;
   right:10px;
   cursor: pointer;
-  font-size: 40px; /* Adjust the font size as needed */
-  color: #fff; /* Color of the unmute icon */
+  font-size: 40px; 
+  color: #fff; 
 }
 
 #unmuteButton i {
-  margin-right: 5px; /* Space between icon and text */
+  margin-right: 5px; 
 }
 
-/* Style for the mute icon */
+
 #unmuteButton i.fa-volume-mute {
-  color: red; /* Color of the mute icon */
+  color: red; 
 }
 #counter {
   width: 100vw;
