@@ -4,7 +4,7 @@
     <!--    link css-->
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
    
 </head>
 
@@ -12,12 +12,14 @@
 <body id="app" class="d-flex h-100">
   <script src="https://cdn.tailwindcss.com"></script>
 
+
   <body class="relative w-full h-screen m-0 
       font-redHatText">
-    <section class="w-full h-full flex flex-col justify-center items-center" id="vid">
+    <section class="w-full h-full flex flex-col" id="vid">
       
       <!--Time-->
       <div id="vido">
+        <button id="unmuteButton"><i class="fas fa-volume-up"></i></button>
         <video autoplay muted loop id="myVideo" >
           <source src="vid.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
@@ -152,6 +154,25 @@
             image.style.display = "none";
           }
         }
+
+        const unmuteButton = document.getElementById("unmuteButton");
+        let isMuted = true; // Initial state: muted
+
+function toggleMute() {
+  isMuted = !isMuted; // Toggle mute state
+  if (isMuted) {
+    // If muted, set mute icon
+    unmuteButton.innerHTML = '<i class="fas fa-volume-mute"></i>';
+    video.muted = true; // Mute the video
+  } else {
+    // If unmuted, set unmute icon
+    unmuteButton.innerHTML = '<i class="fas fa-volume-up"></i>';
+    video.muted = false; // Unmute the video
+  }
+}
+        
+        // Add click event listener to toggle mute/unmute when the button is clicked
+        unmuteButton.addEventListener("click", toggleMute);
 
 // Initial check and add event listener for changes
 toggleMedia();

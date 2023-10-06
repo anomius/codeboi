@@ -26,6 +26,27 @@ section{
   top: 0;
   left: 0;
 }
+
+
+#unmuteButton {
+  background-color: transparent;
+  position: fixed;
+  border: none;
+  bottom: 15%;
+  right:10px;
+  cursor: pointer;
+  font-size: 24px; /* Adjust the font size as needed */
+  color: #fff; /* Color of the unmute icon */
+}
+
+#unmuteButton i {
+  margin-right: 5px; /* Space between icon and text */
+}
+
+/* Style for the mute icon */
+#unmuteButton i.fa-volume-mute {
+  color: red; /* Color of the mute icon */
+}
 #counter {
   width: 100vw;
   height: 15vh;
